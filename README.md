@@ -1,6 +1,11 @@
 ## Architecture Overview
 ![Untitled Diagram drawio](https://github.com/user-attachments/assets/94a921a9-8b7e-4aeb-9a28-5acec187232d)
 
+## Setting Up The Deployment Workflow
+1. Create an ECR Repository and upload a container image
+2. Create App Runner with image source from ECR repository in step 1 and enable automatic deployment. Automatic deployment will watch for image revisions in the ECR repository and redeploy.
+3. Create Codebuild with source code provider from github. Ensure you have logged in to your github account in AWS via OAUTH. First time will create a secret for the connection to github.
+4. After logging in to your github, set the repository source and enable webook. Webhook will listen to events PUSH, PR MERGE, etc. and trigger the codebuild pipeline. Write the commands to run in the pipeline that will build the source code from provider (i.e. github) and push to ECR. Refer to [PUSHING LOCAL IMAGE TO ECR (AWS)](#pushing-local-image-to-ecr-aws) for the commands.
 
 ## PUSHING LOCAL IMAGE TO ECR (AWS)
 1. Create private ECR Repository on AWS
