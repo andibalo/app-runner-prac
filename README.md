@@ -1,3 +1,6 @@
+## Architecture Overview
+
+
 ## PUSHING LOCAL IMAGE TO ECR (AWS)
 1. Create private ECR Repository on AWS
 2. Authenthicate your private ECR in your local docker. View push commands in AWS dashboard. `aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 123456.dkr.ecr.ap-southeast-1.amazonaws.com`
