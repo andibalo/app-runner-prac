@@ -4,7 +4,7 @@
 ## Setting Up The Deployment Workflow
 1. Create an ECR Repository and upload a container image
 2. Create App Runner with image source from ECR repository in step 1 and enable automatic deployment. Automatic deployment will watch for image revisions in the ECR repository and redeploy.
-3. Create Codebuild with source code provider from github. Ensure you have logged in to your github account in AWS via OAUTH. First time will create a secret for the connection to github.
+3. Create Codebuild with source code provider from github. Ensure you have logged in to your github account in AWS via OAUTH. First time using OAUTH will create a secret for the connection to github. The secret contains access token whcih grants Codebuild access to the target github account repositories.
 4. After logging in to your github, set the repository source and enable webook. Webhook will listen to events PUSH, PR MERGE, etc. and trigger the codebuild pipeline. Write the commands to run in the pipeline that will build the source code from provider (i.e. github) and push to ECR. Refer to [PUSHING LOCAL IMAGE TO ECR (AWS)](#pushing-local-image-to-ecr-aws) for the commands.
 
 ## PUSHING LOCAL IMAGE TO ECR (AWS)
