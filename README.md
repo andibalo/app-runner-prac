@@ -1,4 +1,5 @@
 ## Architecture Overview
+![Untitled Diagram drawio](https://github.com/user-attachments/assets/94a921a9-8b7e-4aeb-9a28-5acec187232d)
 
 
 ## PUSHING LOCAL IMAGE TO ECR (AWS)
